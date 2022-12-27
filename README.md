@@ -3,8 +3,6 @@
 `elliptic-curve-solidity` is an open source implementation of Elliptic Curve arithmetic operations written in Solidity.
 
 
-_DISCLAIMER: This is experimental software. **Use it at your own risk**!_
-
 It contains 1 Noir library
 
 1. `EllipticCurve.nr`: provides main elliptic curve operations in affine and Jacobian coordinates.
