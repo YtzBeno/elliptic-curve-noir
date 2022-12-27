@@ -41,6 +41,6 @@ The `elliptic-curve-noir` contract supports up to 256-bit curves. However, it ha
 
 ## Acknowledgements
 
-Credits must go to witnet. I used his repo as source!
+Credits must go to witnet. I used his repo as source.
 
 - [elliptic-curve-solidity](https://github.com/witnet/elliptic-curve-solidity/blob/master/README.md) by witnet
