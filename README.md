@@ -29,7 +29,7 @@ This library provides functions for:
 
 ## Supported curves
 
-The `elliptic-curve-noir` contract supports up to 256-bit curves. However, it has been extensively tested for the following curves:
+The `elliptic-curve-noir` contract has been extensively tested for the following curves:
 
 - `secp256k1`
 - `secp224k1`
