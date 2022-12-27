@@ -41,15 +41,6 @@ The `elliptic-curve-noir` contract supports up to 256-bit curves. However, it ha
 
 ## Acknowledgements
 
-Some functions of the contract are based on:
+Credits must go to witnet. I used his repo as source!
 
 - [elliptic-curve-solidity](https://github.com/witnet/elliptic-curve-solidity/blob/master/README.md) by witnet
-- [Comparatively Study of ECC and Jacobian Elliptic Curve Cryptography](https://pdfs.semanticscholar.org/5c64/29952e08025a9649c2b0ba32518e9a7fb5c2.pdf) by Anagha P. Zele and Avinash P. Wadhe
-- [`Numerology`](https://github.com/nucypher/numerology) by NuCypher
-- [`solidity-arithmetic`](https://github.com/gnosis/solidity-arithmetic) by Gnosis
-- [`ecsol`](https://github.com/jbaylina/ecsol) written by Jordi Baylina
-- [`standard contracts`](https://github.com/androlo/standard-contracts) written by Andreas Olofsson
-
-## License
-
-`elliptic-curve-Noir` is published under the [MIT license]
