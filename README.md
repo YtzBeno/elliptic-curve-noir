@@ -1,6 +1,6 @@
-# elliptic-curve-solidity 
+# elliptic-curve-noir 
 
-`elliptic-curve-solidity` is an open source implementation of Elliptic Curve arithmetic operations written in Solidity.
+`elliptic-curve-noir` is an open source implementation of Elliptic Curve arithmetic operations written in noir.
 
 
 It contains 1 Noir library
@@ -29,7 +29,7 @@ This library provides functions for:
 
 ## Supported curves
 
-The `elliptic-curve-solidity` contract supports up to 256-bit curves. However, it has been extensively tested for the following curves:
+The `elliptic-curve-noir` contract supports up to 256-bit curves. However, it has been extensively tested for the following curves:
 
 - `secp256k1`
 - `secp224k1`
