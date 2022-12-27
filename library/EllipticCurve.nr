@@ -12,8 +12,8 @@ fn invMod(_x : pub Field, _pp : pub Field) -> Field {
 
     for _x in != 0 {
         let t = r / _x;
-        let (q, newT) = (newT, addmod(q, (_pp - mulmod(t, newT, _pp)), _pp));
-        let (r, _x) = (_x, r - t * _x);
+        (q, newT) = (newT, addmod(q, (_pp - mulmod(t, newT, _pp)), _pp));
+        (r, _x) = (_x, r - t * _x);
     };
 
     q
