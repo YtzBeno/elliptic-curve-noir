@@ -35,7 +35,7 @@ fn isOnCurve(_x : pub Field, _y : pub Field, _aa : pub Field, _bb : pub Field, _
         a
     }
 
-    let mut lhs  mulmod(_y, _y, _pp);
+    let lhs  mulmod(_y, _y, _pp);
     let mut rhs = mulmod(mulmod(_x, _x, _pp), _x, _pp);
 
     if _aa != 0 {
@@ -101,16 +101,14 @@ fn ecMul(k : pub Field, _x : pub Field, _y : pub Field, _aa : pub Field, _pp : p
 
 fn jacAdd(_x1 : pub Field, _y1 : pub Field, _z1 : pub Field, _x2 : pub Field, _y2 : pub Field, _z2 : pub Field, _pp : pub Field) -> (Field, Field, Field) {
     if (x_1 == 0) & (_y1 == 0) {
-        let a = (_x2, _y2, _z2);
-        a
+        (_x2, _y2, _z2)
     }
 
     if (_x2 == 0) & (_y2 == 0) {
-        let b = (_x1, _y1, _z1);
-        b
+        (_x1, _y1, _z1)
     }
 
-    let My_Array = [Field; 4];
+    let mut My_Array = [Field; 4];
     let mut My_Array[0] = mulmod(_z1, _z1, _pp);
     let mut My_Array[1] = mulmod(_z1, zs[0], _pp);
     let mut My_Array[2] = mulmod(_z2, _z2, _pp);
@@ -138,15 +136,13 @@ fn jacAdd(_x1 : pub Field, _y1 : pub Field, _z1 : pub Field, _x2 : pub Field, _y
 
     let qz = mulmod(hr[0], mulmod(_z1, _z2, _pp), _pp);
 
-    let c = (qx, qy, qz);
+    (qx, qy, qz)
 
-    c
 }
 
 fn jacDouble(_x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field, Field) {
     if _z == 0 {
-        let a = (_x, _y, _z);
-        a
+        (_x, _y, _z)
     }
 
     let mut x = mulmod(_x, _x, _pp);
@@ -160,15 +156,14 @@ fn jacDouble(_x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _p
     let x = addmod(mulmod(m, m, _pp), _pp - addmod(s, s, _pp), _pp);
     let y = addmod(mulmod(m, addmod(s, _pp - x, _pp), _pp), _pp - mulmod(8, mulmod(y, y, _pp), _pp), _pp);
     let z = mulmod(2, mulmod(_y, _z, _pp), _pp);
+
+    (x, y, z);
     
-    let b = (x, y, z);
-    b
 }
 
 fn jacMul(_d : pub Field, _x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field, Field) {
     if _d == 0 {
-        let a = (_x, _y, _z);
-        a
+        (_x, _y, _z);
     }
 
     let mut remaining = _d;
@@ -183,6 +178,6 @@ fn jacMul(_d : pub Field, _x : pub Field, _y : pub Field, _z : pub Field, _aa : 
         remaining = remaining / 2;
         (_x, _y, _z) = jacDouble(_x, _y, _z, _aa, _pp);
     };
-    let b = (qx, qy, qz);
-    b
+
+    (qx, qy, qz);
 }
