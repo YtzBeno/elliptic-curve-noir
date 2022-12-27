@@ -52,4 +52,4 @@ Some functions of the contract are based on:
 
 ## License
 
-`elliptic-curve-Noir` is published under the [MIT license][license].
+`elliptic-curve-Noir` is published under the [MIT license]
