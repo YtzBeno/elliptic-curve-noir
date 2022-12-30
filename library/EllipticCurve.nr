@@ -49,11 +49,11 @@ fn isOnCurve(_x : pub Field, _y : pub Field, _aa : pub Field, _bb : pub Field, _
     let mut rhs = mulmod(mulmod(_x, _x, _pp), _x, _pp);
 
     if _aa != 0 {
-        let mut rhs = addmod(rhs, mulmod(_x, _aa, _pp), _pp);
+        let rhs = addmod(rhs, mulmod(_x, _aa, _pp), _pp);
     }
 
     if _bb != 0 {
-        let mut rhs = addmod(rhs, _bb, _pp);
+        let rhs = addmod(rhs, _bb, _pp);
     }
 
     if lhs == rhs {
