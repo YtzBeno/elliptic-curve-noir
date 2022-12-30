@@ -10,7 +10,6 @@ fn addmod(x : pub Field, y : pub Field, k : pub Field) -> Field {
     z
 }
 
-
 fn invMod(_x : pub Field, _pp : pub Field) -> Field {
     constrain _x != 0;
     constrain _x != _pp;
