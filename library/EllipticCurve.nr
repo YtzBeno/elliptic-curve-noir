@@ -1,4 +1,15 @@
-let mut U255_MAX_PLUS_1: comptime Field = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
+fn mulmod(x : pub Field, y : pub Field, k : pub Field) -> Field {
+    constrain k != 0;
+    let z = (x * y) % k;
+    z
+}
+
+fn addmod(x : pub Field, y : pub Field, k : pub Field) -> Field {
+    constrain k != 0;
+    let z = (x + y) % k;
+    z
+}
+
 
 fn invMod(_x : pub Field, _pp : pub Field) -> Field {
     constrain _x != 0;
