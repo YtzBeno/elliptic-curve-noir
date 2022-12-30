@@ -1,16 +1,16 @@
-fn mulmod(x : pub Field, y : pub Field, k : pub Field) -> Field {
+fn mulmod(x : Field, y : Field, k : Field) -> Field {
     constrain k != 0;
     let z = (x * y) % k;
     z
 }
 
-fn addmod(x : pub Field, y : pub Field, k : pub Field) -> Field {
+fn addmod(x : Field, y : Field, k : Field) -> Field {
     constrain k != 0;
     let z = (x + y) % k;
     z
 }
 
-fn invMod(_x : pub Field, _pp : pub Field) -> Field {
+fn invMod(_x : Field, _pp : Field) -> Field {
     constrain _x != 0;
     constrain _x != _pp;
     constrain _pp != 0;
@@ -30,7 +30,7 @@ fn invMod(_x : pub Field, _pp : pub Field) -> Field {
 
 }
 
-fn toAffine(_x : pub Field, _y : pub Field, _z : pub Field, _pp : pub Field) -> (Field, Field) {
+fn toAffine(_x : Field, _y : Field, _z : Field, _pp : Field) -> (Field, Field) {
     let zInv = invMod(_z, _pp);
     let zInv2 = mulmod(zInv, zInv, _pp);
     let x2 = mulmod(_x, zInv2, _pp);
@@ -39,7 +39,7 @@ fn toAffine(_x : pub Field, _y : pub Field, _z : pub Field, _pp : pub Field) -> 
     (x2, y2)
 }
 
-fn isOnCurve(_x : pub Field, _y : pub Field, _aa : pub Field, _bb : pub Field, _pp : pub Field) -> bool {
+fn isOnCurve(_x : Field, _y : Field, _aa : Field, _bb : Field, _pp : Field) -> bool {
     if (_x == 0) | (_x >= 0 _pp) | (_y == 0) | (_y >= _pp) {
         let a = false;
         a
@@ -64,11 +64,11 @@ fn isOnCurve(_x : pub Field, _y : pub Field, _aa : pub Field, _bb : pub Field, _
 
 }
 
-fn ecInv(_x : pub Field, _y : pub Field, _pp : pub Field) -> (Field, Field) {
+fn ecInv(_x : Field, _y : Field, _pp : Field) -> (Field, Field) {
     (_x, (_pp - _y) % _pp)
 }
 
-fn ecAdd(_x1 : pub Field, _y1 : pub Field, _x2 : pub Field, _y2 : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field) {
+fn ecAdd(_x1 : Field, _y1 : Field, _x2 : Field, _y2 : Field, _aa : Field, _pp : Field) -> (Field, Field) {
     let x = 0;
     let y = 0;
     let z = 0;
@@ -88,7 +88,7 @@ fn ecAdd(_x1 : pub Field, _y1 : pub Field, _x2 : pub Field, _y2 : pub Field, _aa
     b
 }
 
-fn ecSub(_x1 : pub Field, _y1 : pub Field, _x2 : pub Field, _y2 : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field) {
+fn ecSub(_x1 : Field, _y1 : Field, _x2 : Field, _y2 : Field, _aa : Field, _pp : Field) -> (Field, Field) {
     let x;
     let y;
 
@@ -98,7 +98,7 @@ fn ecSub(_x1 : pub Field, _y1 : pub Field, _x2 : pub Field, _y2 : pub Field, _aa
     b
 }
 
-fn ecMul(k : pub Field, _x : pub Field, _y : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field) {
+fn ecMul(k : Field, _x : Field, _y : Field, _aa : Field, _pp : Field) -> (Field, Field) {
     let x1;
     let y1;
     let z1;
@@ -109,7 +109,7 @@ fn ecMul(k : pub Field, _x : pub Field, _y : pub Field, _aa : pub Field, _pp : p
     b
 }
 
-fn jacAdd(_x1 : pub Field, _y1 : pub Field, _z1 : pub Field, _x2 : pub Field, _y2 : pub Field, _z2 : pub Field, _pp : pub Field) -> (Field, Field, Field) {
+fn jacAdd(_x1 : Field, _y1 : Field, _z1 : Field, _x2 : Field, _y2 : Field, _z2 : Field, _pp : Field) -> (Field, Field, Field) {
     if (x_1 == 0) & (_y1 == 0) {
         (_x2, _y2, _z2)
     }
@@ -150,7 +150,7 @@ fn jacAdd(_x1 : pub Field, _y1 : pub Field, _z1 : pub Field, _x2 : pub Field, _y
 
 }
 
-fn jacDouble(_x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field, Field) {
+fn jacDouble(_x : Field, _y : Field, _z : Field, _aa : Field, _pp : Field) -> (Field, Field, Field) {
     if _z == 0 {
         (_x, _y, _z)
     }
@@ -171,7 +171,7 @@ fn jacDouble(_x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _p
     
 }
 
-fn jacMul(_d : pub Field, _x : pub Field, _y : pub Field, _z : pub Field, _aa : pub Field, _pp : pub Field) -> (Field, Field, Field) {
+fn jacMul(_d : Field, _x : Field, _y : Field, _z : Field, _aa : Field, _pp : Field) -> (Field, Field, Field) {
     if _d == 0 {
         (_x, _y, _z);
     }
