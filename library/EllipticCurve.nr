@@ -167,7 +167,7 @@ fn jacDouble(_x : Field, _y : Field, _z : Field, _aa : Field, _pp : Field) -> (F
     let y = addmod(mulmod(m, addmod(s, _pp - x, _pp), _pp), _pp - mulmod(8, mulmod(y, y, _pp), _pp), _pp);
     let z = mulmod(2, mulmod(_y, _z, _pp), _pp);
 
-    (x, y, z);
+    (x, y, z)
     
 }
 
@@ -189,5 +189,5 @@ fn jacMul(_d : Field, _x : Field, _y : Field, _z : Field, _aa : Field, _pp : Fie
         (_x, _y, _z) = jacDouble(_x, _y, _z, _aa, _pp);
     };
 
-    (qx, qy, qz);
+    (qx, qy, qz)
 }
