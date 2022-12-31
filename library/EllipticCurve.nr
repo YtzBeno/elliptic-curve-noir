@@ -69,9 +69,9 @@ fn ecInv(_x : Field, _y : Field, _pp : Field) -> (Field, Field) {
 }
 
 fn ecAdd(_x1 : Field, _y1 : Field, _x2 : Field, _y2 : Field, _aa : Field, _pp : Field) -> (Field, Field) {
-    let x = 0;
-    let y = 0;
-    let z = 0;
+    let mut x = 0;
+    let mut y = 0;
+    let mut z = 0;
 
     if _x1 == _x2 {
         if addmod(_y1, _y2, _pp) == 0 {
